@@ -10,10 +10,12 @@ string podstawieniowy(string a) {
 	cin >> c;
 	if(c > 0 && c <= 26){
 		for (int i = 0; i < a.length(); i++) {
+			if (a[i] >= 97 && a[i] <= 122) {
 				a[i] = a[i] + c;
 				if (a[i] > 122) {
 					a[i] = a[i] % 123 + 97;
 				}
+			}
 		}
 	}else{
 		cout << "Wprowadziles niepoprawna liczbe.\n";
@@ -35,9 +37,11 @@ string odszyfruj(string a) {
 	string q = " ";
 	for(int i = 0; i <= 26; i++){
 		for (int j = 0; j < a.length(); j++) {
-			a[j] = a[j] - i;
-			if (a[j] < 97) {
-				a[j] = a[j] % 71 + 97;
+			if (a[j] >= 97 && a[j] <= 122) {
+				a[j] = a[j] - i;
+				if (a[j] < 97) {
+					a[j] = a[j] + 26;
+				}
 			}
 		}
 		wynik = wynik + a + q;
