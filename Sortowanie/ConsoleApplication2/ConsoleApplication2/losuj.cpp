@@ -90,10 +90,10 @@ void losuj::scalanie(int lewy, int srodek, int prawy) //funkcja scalaj¹ca dwie t
 {
 	int i = lewy;
 	int j = srodek + 1;
-	for (int i = lewy; i <= prawy; i++) //do dodatkowej tablicy kopiujemy podzielony na praw¹ i lew¹ czêœæ wektora
+	for (int i = lewy; i <= prawy; i++) { //do dodatkowej tablicy kopiujemy podzielony na praw¹ i lew¹ czêœæ wektora
 		pom[i] = vec[i];
-
-	for (int k = lewy; k <= prawy; k++) //pêtla scalaj¹ca tablice w wektorze
+	}
+	for (int k = lewy; k <= prawy; k++) { //pêtla scalaj¹ca tablice w wektor
 		if (i <= srodek)
 			if (j <= prawy)
 				if (pom[j] < pom[i])
@@ -104,12 +104,13 @@ void losuj::scalanie(int lewy, int srodek, int prawy) //funkcja scalaj¹ca dwie t
 				vec[k] = pom[i++];
 		else
 			vec[k] = pom[j++];
+	}
 }
 
-void losuj::sortuj_scal(int lewy, int prawy) // funkcja 
+void losuj::sortuj_scal(int lewy, int prawy)
 {
 	if (prawy <= lewy) return; //posortowany jeden element
-	int srodek = (prawy + lewy) / 2;
+	int srodek = (prawy + lewy) / 2; //wydzielanie œrodka
 	sortuj_scal(lewy, srodek); //dzielenie wektora na dwie czêœci
 	sortuj_scal(srodek + 1, prawy);
 	scalanie(lewy, srodek, prawy); //scalanie posortownych tablic do wektora
