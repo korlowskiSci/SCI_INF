@@ -1,0 +1,4 @@
+﻿  ConsoleApplication5.cpp
+c:\users\korlowski061\source\repos\consoleapplication5\consoleapplication5\consoleapplication5.cpp(11): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\korlowski061\source\repos\consoleapplication5\consoleapplication5\consoleapplication5.cpp(42): warning C4715: "rekurencyjny”: niewszystkie ścieżki kodu zwracają wartość
+  ConsoleApplication5.vcxproj -> C:\Users\korlowski061\source\repos\ConsoleApplication5\Debug\ConsoleApplication5.exe
